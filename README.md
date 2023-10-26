@@ -8,7 +8,7 @@ Bem-vindo ao projeto ConvenienciaSCI! Este é um sistema web desenvolvido com Dj
 
 O ConvenienciaSCI inclui as seguintes funcionalidades:
 
-- **Cadastro de Colaboradores,Usuario**
+- **Cadastro de Colaboradores,usuarios**
 - **Controle de permissões**
 - **Cadastro de Produtos**: Adicione, atualize e exclua produtos da sua loja de conveniência.
 - **Relatórios de Vendas**: Gere relatórios detalhados das vendas de produtos e visualize estatísticas.
@@ -44,5 +44,5 @@ Siga estas etapas para usar o ConvenienciaSCI:
 
 ## Autor
 
-[Jefferson], Fins para uso educativo.
+[Jefferson] Fins para uso educativo.
 
