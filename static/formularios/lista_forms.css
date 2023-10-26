@@ -1,0 +1,489 @@
+/* Estilos globais */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f7ff;
+  margin: 0;
+  padding: 58px;
+  overflow: hidden; /* Impede que a rolagem se aplique ao body */
+}
+
+.container {
+  max-width: 1420px;
+  margin: 0 auto;
+  padding: 10px;
+  overflow: auto;
+  margin-right: 130px; /* Adjust the value as needed */
+}
+
+h1 {
+  padding: 35px;
+  text-align: center;
+  color: #1d1b31;
+  font-size: 3rem;
+  margin-top: -52px;
+  position: absolute;
+  left: auto;
+  right: 630px;
+}
+
+/* Estilos da tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 8px 8px;
+}
+
+.table-container {
+  margin-top: 20px !important;
+  overflow: auto;
+  max-height: 620px; /* Adjust the maximum height as needed */
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adicione esta linha para a sombra preta */
+}
+
+th {
+  position: sticky;
+  top: 0;
+  background-color: #1d1b31;
+  color: #f9f9f9;
+  font-size: 1.5rem;
+  cursor: pointer;
+
+}
+
+th,
+td {
+  border-bottom: 1px solid #ddd;
+  padding: 19px;
+  text-align: left;
+  font-size: 1.3rem;
+
+  
+}
+
+
+td .show-icons {
+  display: none;
+}
+
+td:hover {
+  background-color: #f9f9f9;
+}
+
+td:hover .show-icons {
+  display: flex;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* Estilos do ícone de situação */
+td .situation-dot {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin-right: 5px;
+  border: 1px solid #333;
+}
+
+td .situation-dot.active {
+  background-color: green;
+  border-color: green;
+}
+
+td .situation-dot.inactive {
+  background-color: red;
+  border-color: red;
+}
+
+/* Estilos da caixa de pesquisa */
+.search-form {
+  margin-bottom: 20px;
+  text-align: right;
+  margin-left: auto;
+}
+
+.search-input {
+  padding: 10px;
+  border: 1px solid #6d6b6b;
+  border-radius: 4px;
+  width: 250px;
+  font-size: 1.2rem;
+}
+
+.search-button {
+  padding: 12px 24px;
+  background-color: #91d8f8;
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.search-icon {
+  margin-right: 5px;
+}
+
+/* Estilos da imagem */
+.image-container {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.image-container img {
+  max-width: 200px;
+  margin-top: -10px !important;
+}
+
+/* Estilos do link de criação */
+.create-link {
+  display: flex;
+  align-items: center;
+  float: left;
+  background-color: #91d8f8;
+  color: #000;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  transition: background-color 0.3s;
+}
+
+.create-link:hover {
+  background-color: #2d3560;
+}
+
+/* Estilos de hover */
+th:hover {
+  background-color: #424141;
+}
+
+/* Estilos dos botões abaixo da tabela */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: -2px;
+  background-color: 0;
+  padding: 10px;
+}
+
+.button {
+  padding: 12px 24px;
+  background-color: #91d8f8;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.button:hover {
+  background-color: #2d3560;
+}
+
+/* Estilos responsivos */
+
+@media only screen and (max-width: 768px) {
+  /* Estilos para telas menores que 768px */
+  body {
+    padding: 20px;
+  }
+
+  .container {
+    margin-right: 0;
+  }
+
+  h1 {
+    position: static;
+    margin-top: 0;
+  }
+
+  .table-container {
+    max-height: none;
+  }
+
+  .search-form {
+    text-align: center;
+  }
+
+  .search-input {
+    width: 100%;
+    max-width: 300px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  .create-link {
+    float: none;
+    margin-bottom: 10px;
+  }
+
+  .button-container {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+ 
+
+}.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 105%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 900px; /* Aumente o valor aqui para aumentar a largura máxima */
+  max-height: 90%; /* Aumente o valor aqui para aumentar a altura máxima */
+  overflow: auto;
+}
+
+.modal-close {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  float: right; /* Adiciona esta linha para alinhar à direita */
+}
+
+.modal-close:hover {
+  background-color: #d32f2f;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+}
+
+.view-button {
+  background-color: #cbd8e6;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.view-button:hover {
+  background-color: #0056b3;
+}.filter-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.filter-row .filter-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: center;
+  margin-left: 350px; /* Ajuste o valor conforme necessário */
+}
+
+.filter-container label {
+  margin-bottom: 5px;
+  text-align: center;
+  line-height: 38px;
+  color: #2d3560;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.filter-container select {
+  padding: 10px;
+  font-size: 20px;
+  border: 1px solid #430ef1;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #333333;
+  margin-top: 5px; /* Adicione essa propriedade para ajustar o alinhamento vertical */
+}
+
+.filter-container select:hover {
+  border-color: #007bff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.modal-dialog {
+  max-width: 400px;
+  margin: 1.75rem auto;
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+.modal-title {
+  margin-bottom: 10px;
+}
+
+.modal-body {
+  padding: 20px 0;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+
+
+
+.create-link {
+  display: inline-block;
+  margin-right: 110px; /* Adicione a margem desejada */
+}
+
+.create-icon {
+  margin-right: 5px; /* Adicione a margem desejada */
+}
+
+.button-text {
+  vertical-align: middle; /* Ajuste a alinhamento vertical conforme necessário */
+}
+
+/*usuario*/
+.delete-button {
+  font-size:25px; /* Increase the font size */
+  padding: px px;
+  color: #1d1b31; /* Adjust the padding to make the button larger */
+}
+
+td .icon {
+  display: flex;
+  align-items: center;
+}
+
+td .edit-icon {
+  color: #1d1b31;
+  font-size:28px;
+  margin-left: 10px;
+}
+
+
+
+/*Colaboradores*/
+.edit-link {
+  display: inline-block;
+  padding: 1px 1px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 4px;
+  color: #333;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.edit-link:hover {
+  background-color: #ddd;
+}
+
+.edit-icon {
+  margin-right: 5px;
+}
+
+/* Se você quiser ajustar o tamanho do ícone, você pode usar a propriedade "font-size" */
+.edit-icon {
+  font-size: 6px;
+}
+
+.view-button {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #060606;
+  border: none;
+  border-radius: 4px;
+  color: #fff; /* Alterando para a cor branca */
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.view-button:hover {
+  background-color: #343131;
+}
+
+.view-icon {
+  margin-right: 5px;
+}
+
+.view-icon {
+  font-size: 16px;
+}
+
+
+
+.edit-link {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 4px;
+  color: #333;
+  text-decoration: none;
+  margin-right: 10px; /* Adicionando espaçamento à direita */
+}
+
+
+
+
